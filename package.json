@@ -1,0 +1,35 @@
+{
+  "name": "crossovertaskmanager",
+  "version": "1.0.0",
+  "description": "Assignment to Crossover.com",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "Daniel Gomes <programad@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.8.0",
+    "express": "^4.14.0",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programad/crossovertaskmanager.git"
+  },
+  "keywords": [
+    "task",
+    "manager"
+  ],
+  "bugs": {
+    "url": "https://github.com/programad/crossovertaskmanager/issues"
+  },
+  "homepage": "https://github.com/programad/crossovertaskmanager#readme"
+}
