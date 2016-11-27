@@ -2,14 +2,13 @@
 
   'use strict';
 
-  var ListController = function($scope, $location, Tasks) {
+  var ListController = function($scope, $location, TaskService) {
 
-      $scope.tasks = Tasks.find();
+      $scope.tasks = TaskService.find();
       $scope.selectedTask = {};
 
   };
 
-  angular.module('tasklistmanager')
-     .controller('ListController', ['$scope', '$location', 'Tasks', ListController]);
+  angular.module('taskmanager').controller('ListController', ['$scope', '$location', 'TaskService', ListController]);
 
 })();

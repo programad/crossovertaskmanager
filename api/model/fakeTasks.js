@@ -14,8 +14,9 @@ let task432459 = {
         'metrics': taskBase.metricsBase,
         'build': taskBase.buildBase,
         'unitTest': taskBase.testBase,
-        'functionalTest': taskBase.testBase
-    }
+        'functionalTest': taskBase.testBase,
+        'result': taskBase.resultBase
+    };
 
 let task432460 = {
         'id': 432460,
@@ -49,8 +50,12 @@ let task432460 = {
             skiped: 2145,
             codeCovered: 0.23,
             state: enums.taskStates.completed
+        },
+        'result': {
+            state: enums.taskStates.completed,
+            message: enums.taskStates.completed
         }
-    }
+    };
 
 let task432461 = {
         'id': 432461,
@@ -84,8 +89,9 @@ let task432461 = {
             skiped: 2145,
             codeCovered: 0.23,
             state: enums.taskStates.completed
-        }
-    }
+        },
+        'result': taskBase.resultBase
+    };
 
 let task432462 = {
         'id': 432462,
@@ -97,8 +103,9 @@ let task432462 = {
         'metrics': taskBase.metricsBase,
         'build': taskBase.buildBase,
         'unitTest': taskBase.testBase,
-        'functionalTest': taskBase.testBase
-    }
+        'functionalTest': taskBase.testBase,
+        'result': taskBase.resultBase
+    };
 
 let  task432465 = {
         'id': 432465,
@@ -110,8 +117,9 @@ let  task432465 = {
         'metrics': taskBase.metricsBase,
         'build': taskBase.buildBase,
         'unitTest': taskBase.testBase,
-        'functionalTest': taskBase.testBase
-    }
+        'functionalTest': taskBase.testBase,
+        'result': taskBase.resultBase
+    };
 
 let tasks = [task432459, task432460, task432461, task432462, task432465];
 

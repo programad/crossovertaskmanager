@@ -14,6 +14,6 @@ let getTasks = {
 
           return defered.promise;
   }
-}
+};
 
 module.exports = getTasks;

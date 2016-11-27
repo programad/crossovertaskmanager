@@ -1,0 +1,222 @@
+.hidden-element, div.tasklist .items div .item div.steps.expanded {
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.visibile-element, div.tasklist .items div .item div.steps {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  width: 100%;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  max-width: 1160px;
+}
+
+div.tasklist {
+  margin: 0.5em auto;
+  background-color: #feffff;
+  text-align: center;
+}
+div.tasklist .state {
+  text-transform: capitalize;
+}
+div.tasklist .base-state, div.tasklist div.rejected, div.tasklist div.completed, div.tasklist div.accepted, div.tasklist div.pending, div.tasklist div.running {
+  background-repeat: no-repeat;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  cursor: pointer;
+}
+div.tasklist .rejected-state, div.tasklist div.rejected {
+  color: #be0712;
+  border-color: #be0712;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMDQ3MjEiIHkxPSItMC4wMzk2MTQiIHgyPSIwLjk1Mjc5IiB5Mj0iMS4wMzk2MTQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZWUwZTEiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-linear-gradient(310deg, #fee0e1, #ffffff, #ffffff, #ffffff);
+  background-image: -webkit-linear-gradient(310deg, #fee0e1, #ffffff, #ffffff, #ffffff);
+  background-image: linear-gradient(140deg, #fee0e1, #ffffff, #ffffff, #ffffff);
+}
+div.tasklist div.pending {
+  cursor: not-allowed;
+  border-color: #c4c4c4;
+  color: #c4c4c4;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMDQ3MjEiIHkxPSItMC4wMzk2MTQiIHgyPSIwLjk1Mjc5IiB5Mj0iMS4wMzk2MTQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkZmViZjgiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-linear-gradient(310deg, #dfebf8, #ffffff, #ffffff, #ffffff);
+  background-image: -webkit-linear-gradient(310deg, #dfebf8, #ffffff, #ffffff, #ffffff);
+  background-image: linear-gradient(140deg, #dfebf8, #ffffff, #ffffff, #ffffff);
+}
+div.tasklist div.running {
+  cursor: not-allowed;
+  border-color: #1f5086;
+  color: #1f5086;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMDQ3MjEiIHkxPSItMC4wMzk2MTQiIHgyPSIwLjk1Mjc5IiB5Mj0iMS4wMzk2MTQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkZmViZjgiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-linear-gradient(310deg, #dfebf8, #ffffff, #ffffff, #ffffff);
+  background-image: -webkit-linear-gradient(310deg, #dfebf8, #ffffff, #ffffff, #ffffff);
+  background-image: linear-gradient(140deg, #dfebf8, #ffffff, #ffffff, #ffffff);
+}
+div.tasklist .completed-state, div.tasklist div.completed, div.tasklist div.accepted {
+  border-color: #548039;
+  color: #548039;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMDQ3MjEiIHkxPSItMC4wMzk2MTQiIHgyPSIwLjk1Mjc5IiB5Mj0iMS4wMzk2MTQiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlN2YxZTAiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjclIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-linear-gradient(310deg, #e7f1e0, #ffffff, #ffffff, #ffffff);
+  background-image: -webkit-linear-gradient(310deg, #e7f1e0, #ffffff, #ffffff, #ffffff);
+  background-image: linear-gradient(140deg, #e7f1e0, #ffffff, #ffffff, #ffffff);
+}
+div.tasklist .header {
+  width: 97%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+div.tasklist .header div {
+  display: inline-block;
+  /* non-flexbox browsers */
+  -webkit-flex: 1 0;
+  flex: 1 0;
+}
+div.tasklist .header div:first-child {
+  text-align: left;
+  -webkit-flex: 1.2 0;
+  flex: 1.2 0;
+}
+div.tasklist .items {
+  width: 98%;
+}
+div.tasklist .items div {
+  background-attachment: fixed;
+  margin-bottom: 1rem;
+  padding: 0.1rem 0.3rem;
+}
+div.tasklist .items div .item {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  line-height: 2em;
+  vertical-align: middle;
+}
+div.tasklist .items div .item div.item div.show-time, div.tasklist .items div .item div.details div.show-time {
+  text-transform: lowercase;
+}
+div.tasklist .items div .item img {
+  vertical-align: middle;
+}
+div.tasklist .items div .item > div:first-child {
+  text-align: left;
+  -webkit-flex: 1.2 0;
+  flex: 1.2 0;
+}
+div.tasklist .items div .item > div:last-child {
+  text-align: left;
+  -webkit-flex: 4 0;
+  flex: 4 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+div.tasklist .items div .item div.steps {
+  -moz-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -o-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+div.tasklist .items div .item div.steps div {
+  padding: 0;
+}
+
+.step-state {
+  width: 8%;
+  height: 2rem;
+  border: 2px solid #c4c4c4;
+  background-color: #d8d8d8;
+  margin: 0 auto;
+}
+.step-state div {
+  -moz-transition: width 0.75s linear, background 1.95s ease-in;
+  -o-transition: width 0.75s linear, background 1.95s ease-in;
+  -webkit-transition: width 0.75s linear, background 1.95s ease-in;
+  transition: width 0.75s linear, background 1.95s ease-in;
+  height: 2rem;
+}
+.step-state.rejected div {
+  background-color: #be0712;
+}
+.step-state.completed div {
+  background-color: #548039;
+}
+.step-state.pending div {
+  background-color: transparent;
+}
+.step-state.running div {
+  background-color: #5e9cd3;
+}

@@ -1,0 +1,30 @@
+@import "base";
+
+.step-state {
+    width: 8%;
+    height: 2rem;
+    border: $border-width solid $pending-color;
+    background-color: $pending-background-color;
+    margin: 0 auto;
+
+    & div {
+        @include transition(width linear $transition-time * 0.5, background ease-in $transition-time * 1.3);
+        height: 2rem;
+    }
+
+    &.rejected div {
+        background-color: $rejected-color;
+    }
+
+    &.completed div {
+        background-color: $completed-color;
+    }
+
+    &.pending div {
+        background-color: transparent;
+    }
+
+    &.running div {
+        background-color: $running-color;
+    }
+}

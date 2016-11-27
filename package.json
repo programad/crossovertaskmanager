@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install && gulp build",
+    "build": "gulp build",
+    "lint": "gulp lint"
   },
   "author": "Daniel Gomes <programad@gmail.com>",
   "license": "MIT",
@@ -17,7 +20,12 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-dest-clean": "^0.5.0",
     "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sequence": "^0.4.6",
+    "gulp-util": "^3.0.7",
     "jshint": "^2.9.4"
   },
   "repository": {

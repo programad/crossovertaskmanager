@@ -1,0 +1,16 @@
+// Import compass
+@import "compass/reset";
+
+// Import Base
+@import "base";
+
+body {
+    font-family: $font-family;
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    max-width: 1160px;
+}

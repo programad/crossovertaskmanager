@@ -8,7 +8,6 @@ const
 
 app.use(bodyParser.json());
 
-console.log('./' + config.appRoot);
 app.use(express.static(__dirname + '/../' + config.appRoot));
 
 module.exports = app

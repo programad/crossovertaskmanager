@@ -1,0 +1,145 @@
+@import "base";
+
+div.tasklist {
+
+    margin: 0.5em auto;
+    background-color: $background-color;
+    text-align: center;
+
+    .state {
+        text-transform: capitalize;
+    }
+
+    .base-state {
+        background-repeat: no-repeat;
+        border-width: $border-width;
+        border-style: solid;
+        border-color: transparent;
+        cursor: pointer;
+    }
+
+
+    & div.rejected {
+        @extend .base-state;
+    }
+
+    & div.completed {
+        @extend .base-state;
+    }
+
+    & div.accepted {
+        @extend .base-state;
+    }
+
+    & div.pending {
+        @extend .base-state;
+    }
+
+    & div.running {
+        @extend .base-state;
+    }
+
+    .rejected-state {
+        color: $rejected-color;
+        border-color: $rejected-color;
+        @include background-gradient($rejected-background-color);
+    }
+    & div.rejected {
+        @extend .rejected-state;
+    }
+
+    
+    & div.pending {
+        cursor: not-allowed;
+        border-color: $pending-color;
+        color: $pending-color;
+        @include background-gradient($running-background-color);
+    }
+
+    & div.running {
+        cursor: not-allowed;
+        border-color: $running-font-color;
+        color: $running-font-color;
+        @include background-gradient($running-background-color);
+    }
+
+    .completed-state {
+        border-color: $completed-color;
+        color: $completed-color;
+        @include background-gradient($completed-background-color);
+    }
+    & div.completed {
+        @extend .completed-state;
+    }
+    & div.accepted {
+        @extend .completed-state;
+    }
+
+    .header {
+        width: 97%;
+        @include display-flex;
+        @include flex-wrap(nowrap);
+
+        div {
+            display: inline-block; /* non-flexbox browsers */
+            @include flex(1 0);
+
+            &:first-child {
+                text-align: left;
+                @include flex(1.2 0);
+            }
+
+        }
+    }
+    .items {
+
+        width: 98%;
+
+        div {
+
+            background-attachment: fixed;
+            margin-bottom: 1rem;
+            padding: 0.1rem 0.3rem;
+
+            .item {
+                @include display-flex;
+                @include flex-wrap(wrap);
+                line-height: 2em;
+                vertical-align: middle;
+
+                div.item, div.details {
+                    & div.show-time {
+                        text-transform: lowercase;
+                    }
+                }
+                
+                img {
+                    vertical-align: middle;
+                }
+
+                &>div:first-child {
+                    text-align: left;
+                    @include flex(1.2 0);
+                }
+
+                &>div:last-child {
+                    text-align: left;
+                    @include flex(4 0);
+                    @include display-flex;
+                    @include flex-wrap(nowrap);
+                }
+                
+                & div.steps {
+                    @include start-visibile($transition-time * 0.2, linear);
+                    &.expanded {
+                        @extend .hidden-element;
+                    }
+
+                    div {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -14,6 +14,6 @@ let getTaskById = {
 
     return defered.promise;
   }
-}
+};
 
 module.exports = getTaskById;

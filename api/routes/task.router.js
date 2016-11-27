@@ -1,14 +1,12 @@
 'use strict';
 
 const
-    app = require('../../infrastructure/app'),
     getTasks = require('../queries/get-tasks'),
     getTaskById = require('../queries/get-tasks-by-id');
 
-let taskRouter = function () {
+let taskRouter = function (app) {
     app.get('/api/tasks',
-        function (req, res) {
-            
+        function (req, res) {            
             getTasks
                 .execute()
                 .then(function (result) {

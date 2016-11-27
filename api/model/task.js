@@ -4,13 +4,13 @@ const
     enums = require('../../utils/enums'),
     taskBase = require('./taskBase'),
     tasks = require('./fakeTasks'),
-    taskLoader = require('./taskLoader');
+    taskLoader = require('./fakeTaskLoader');
 
 
 let Task = {
     find: function (callback) {
         // returning the tasks to the caller
-        callback(null, tasks);
+        callback(null, tasks.slice(0, 100));
     },
 
     get: function (id, callback) {

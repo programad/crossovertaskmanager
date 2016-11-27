@@ -1,9 +1,9 @@
 (function(){
     'use strict';
 
-    var app =  angular.module('taskmanager', ['ngRoute']);
+    var app =  angular.module('taskmanager', ['ngRoute', 'ngResource']);
 
-    var appConfig = function ($routeProvider, $httpProvider, $locationProvider) {
+    var appConfig = function ($routeProvider, $locationProvider) {
 
         $routeProvider
             .when('/', {
@@ -17,8 +17,7 @@
         $locationProvider.html5Mode(true);
     };
 
-
-    app.config(['$routeProvider', '$httpProvider', '$locationProvider', appConfig]);
+    angular.module('taskmanager').config(['$routeProvider', '$locationProvider', appConfig]);
 
     console.log('client started!');
 })();

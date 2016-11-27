@@ -1,1 +1,34 @@
-<div>listcontroller</div>
+<div class="tasklist">
+    <div class="header">
+        <div>Changelist / Build</div>
+        <div>Owner</div>
+        <div class="show-time">Time Started</div>
+        <div>State</div>
+        <div>Metrics</div>
+        <div>Build</div>
+        <div>Unit Test</div>
+        <div>Functional Test</div>
+    </div>
+    <div class="items">
+        <div data-ng-class="task.state" data-ng-repeat="task in tasks | orderBy: '-id'">
+            <div class="item">
+                <div>
+                    <img task-icon type="task.type" state="task.state" />
+                </div>
+                <div>{{ task.alias }}</div>
+                <div>{{ task.owner || '-' }}</div>
+                <div>{{ task.type == 'computer' ? task.owner : '-' }}</div>
+                <div>{{ task.startedAt | date : 'M/d/yyyy h:mma' }}</div>
+                <div class="state">{{ task.state }}</div>
+                <div class="steps" ng-class="{ expanded: task.selected }">
+                    <div task-update-progress state="task.metrics.state" progress="task.metrics.progress">{{ task.metrics.progress }}</div>
+                    <div task-update-progress state="task.build.state" progress="task.build.progress">{{ task.build.progress }}</div>
+                    <div task-update-progress state="task.unitTest.state" progress="task.unitTest.progress">{{ task.unitTest.progress }}</div>
+                    <div task-update-progress state="task.functionalTest.state" progress="task.functionalTest.progress">{{ task.functionalTest.progress }}</div>
+                </div>
+            </div>
+            <div class="details">
+            </div>
+        </div>
+    </div>
+</div>

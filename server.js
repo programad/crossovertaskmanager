@@ -6,12 +6,12 @@ const
     mainRouter = require('./api/routes/task.router');
 
 // set specific routes
-mainRouter();
+mainRouter(app);
 
 // set global routes
 // this function captures anything requested and routes it to the index. There, the angular router will decide what to do with the requested url
 app.get('*', function (request, response, next) {
-        response.sendFile(rootDir + '/' + appRoot + '/index.html');
+        response.sendFile(__dirname + '/' + config.appRoot + '/index.html');
     });
 
 app.listen(config.port, () => {    
