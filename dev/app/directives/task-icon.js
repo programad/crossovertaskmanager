@@ -11,8 +11,7 @@
                 type: '=',
             },
             link: function(scope, element){
-
-                let changeIcon = function() {
+                var changeIcon = function() {
                     var imageType = scope.type == 'firewall' ? 'firewall' : 'computer';
                     var imageSrc = 'images/icon-' + imageType + '-' + scope.state + '.png';
 

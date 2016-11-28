@@ -4,22 +4,34 @@
 <head>
     <base href="/">
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Crossover Task Manager</title>
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
     <link href="css/main.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    
+    <!--[if lt IE 11]>
+        <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <![endif]-->
 </head>
 
 <body>
     <h1>Task Manager</h1>
     <div data-ng-view></div>
+    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+    <!-- build:js app/app.js -->
     <script src="app/app.js"></script>
-    <script src="app/services/task.service.js"></script>
-    <script src="app/controllers/list.controller.js"></script>
     <script src="app/directives/task-icon.js"></script>
     <script src="app/directives/task-update-progress.js"></script>
+    <script src="app/directives/task-metrics.js"></script>
+    <script src="app/directives/task-popover.js"></script>
+    <script src="app/directives/task-testresult.js"></script>
+    <script src="app/services/task.service.js"></script>
+    <script src="app/controllers/list.controller.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

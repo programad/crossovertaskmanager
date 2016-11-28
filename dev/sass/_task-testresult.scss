@@ -1,0 +1,72 @@
+@import "base";
+
+@import "colors";
+
+.task-testresult {
+    width: 100%;
+    @include display-flex;
+    @include flex-wrap(wrap);
+
+    & div.chart-container {
+        $pie-diameter: 92px;
+        $rotation: 60deg;
+        position: relative;
+        @include transform(rotate($rotation) translate3d( 0, 0, 0));
+        width: $pie-diameter;
+        height: $pie-diameter;
+    }
+
+    & div.perc {
+        @include start-hidden;
+        width: 50%;
+        margin: auto;
+        font-size: 2.5rem;
+        font-weight: 100;
+
+        span {
+            display: block;
+            width: 100%;
+            font-size: $smaller-font;
+            color: $black;
+            letter-spacing: 0;
+            font-weight: 500;
+        }
+    }
+
+    &.task-loaded div.perc, &.task-loaded div.bar div.content {
+        @extend .visibile-element;
+    }
+
+    & div.bar {
+        $height: 2rem;
+        width: 90%;
+        height: $height;
+        background-color: $progress-bar-background-color;
+        margin: auto;
+        position: relative;
+        padding: 0px !important;
+
+        & div.content {
+            @include start-hidden;
+            height: $height;
+            position: relative;
+            top: $height * - 1;
+            padding-top: 0.1rem;
+
+            & span {
+                width: 100%;
+                display: block;
+                color: $black;
+                font-size: $smaller-font;
+            }
+        }
+
+        & div.progress {
+            height: $height;
+            width: 0;
+            background-color: $progress-bar-color;
+            padding: 0px !important;
+            @include transition(width $transition-time);
+        }
+    }
+}

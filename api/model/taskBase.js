@@ -32,7 +32,7 @@ let testBase = {
 let resultBase = {
             state: 'pending',
             message: ''
-        }
+        };
 
 exports.metricsBase = metricsBase;
 exports.buildBase = buildBase;

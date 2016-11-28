@@ -12,5 +12,13 @@ body {
     font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-    max-width: 1160px;
+}
+
+
+img {
+    vertical-align: middle;
+}
+
+small {
+    font-size:$small-font;
 }

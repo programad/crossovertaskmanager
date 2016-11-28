@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    var app =  angular.module('taskmanager', ['ngRoute', 'ngResource']);
+    var app =  angular.module('taskmanager', ['ngRoute', 'ngResource', 'chart.js']);
 
     var appConfig = function ($routeProvider, $locationProvider) {
 
@@ -18,6 +18,4 @@
     };
 
     angular.module('taskmanager').config(['$routeProvider', '$locationProvider', appConfig]);
-
-    console.log('client started!');
 })();

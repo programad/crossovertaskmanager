@@ -1,10 +1,16 @@
 @import "base";
 
+@import "colors";
+
 div.tasklist {
 
     margin: 0.5em auto;
     background-color: $background-color;
     text-align: center;
+
+    .time {
+        text-transform: lowercase;
+    }
 
     .state {
         text-transform: capitalize;
@@ -18,6 +24,10 @@ div.tasklist {
         cursor: pointer;
     }
 
+    & .details div.step-info {
+        @extend .base-state;
+        border-color: $gray;
+    }
 
     & div.rejected {
         @extend .base-state;
@@ -41,7 +51,7 @@ div.tasklist {
 
     .rejected-state {
         color: $rejected-color;
-        border-color: $rejected-color;
+        border-color: $rejected-color  !important;
         @include background-gradient($rejected-background-color);
     }
     & div.rejected {
@@ -63,8 +73,8 @@ div.tasklist {
         @include background-gradient($running-background-color);
     }
 
-    .completed-state {
-        border-color: $completed-color;
+    .completed-state{
+        border-color: $completed-color !important;
         color: $completed-color;
         @include background-gradient($completed-background-color);
     }
@@ -73,16 +83,29 @@ div.tasklist {
     }
     & div.accepted {
         @extend .completed-state;
+    }    
+
+    .steps {
+        text-align: left;
+        @include flex(4 0);
+        @include display-flex;
+        @include flex-wrap(nowrap);
     }
 
     .header {
-        width: 97%;
+        width: 98%;
         @include display-flex;
         @include flex-wrap(nowrap);
+        vertical-align: middle;
+        padding: 0.1rem 0.3rem;
 
         div {
-            display: inline-block; /* non-flexbox browsers */
+            display: inline-block; /* css-hack for non-flexbox browsers */
             @include flex(1 0);
+
+            &.time {
+                @include flex(1.3 0);
+            }
 
             &:first-child {
                 text-align: left;
@@ -97,46 +120,119 @@ div.tasklist {
 
         div {
 
-            background-attachment: fixed;
-            margin-bottom: 1rem;
-            padding: 0.1rem 0.3rem;
+            .item  {                
+                margin-bottom: 1rem;
+            }
 
-            .item {
+            &.basicinfo {
+                padding: 0px;
+            }
+
+            &.basicinfo {
                 @include display-flex;
                 @include flex-wrap(wrap);
                 line-height: 2em;
                 vertical-align: middle;
+                background-attachment: fixed;
+                padding: 0.1rem 0.3rem;
 
-                div.item, div.details {
-                    & div.show-time {
-                        text-transform: lowercase;
-                    }
-                }
-                
-                img {
-                    vertical-align: middle;
-                }
-
-                &>div:first-child {
+                & > div:first-child {
                     text-align: left;
                     @include flex(1.2 0);
                 }
 
-                &>div:last-child {
-                    text-align: left;
-                    @include flex(4 0);
-                    @include display-flex;
-                    @include flex-wrap(nowrap);
+                & > div:last-child {
+                    @extend .steps;
                 }
+
+                & > div {
+                    display: inline-block; /* css-hack for non-flexbox browsers */
+                    @include flex(1 0);
+                }
+                
+
+                & div.time {
+                    @include flex(1.3 0);
+                }
+
                 
                 & div.steps {
                     @include start-visibile($transition-time * 0.2, linear);
+                    @include flex(4 0);
+
                     &.expanded {
                         @extend .hidden-element;
                     }
 
                     div {
                         padding: 0;
+                    }
+                }
+            }
+
+            &.details {
+
+                @include display-flex;
+                @include flex-wrap(wrap);
+                overflow: hidden;
+
+                & > div {
+
+                    margin: 1%;
+                    min-height: 11rem;
+                    width: 15rem;
+                    border-width: $border-width + 1;
+                    @include display-flex;
+                    @include flex-wrap(wrap);
+                    padding: 0.5rem 0.3rem;
+                    
+                    h5 {
+                        width: 100%;
+                    }
+
+                    &.step-info {
+                        @include box-shadow($gray 4px 4px 8px);
+
+                        & > div {                            
+                            padding: 0px;
+                        }
+                    }
+
+                    &.step-info.completed {
+                        @include box-shadow($gray 4px 4px 8px);
+                    }
+
+                    &.step-info.rejected, &.step-info.completed {
+                        font-family: $alternative-font-family;
+
+                        h5 {
+                            text-align: left;
+                            font-weight: bold;
+                        }
+                    }
+                    
+
+                    .font-strong {
+                        font-weight: 500;
+                    }
+
+                    & div.computer {
+                        @extend .font-strong;
+                        width: 50%;
+                        color: $running-font-color;
+
+                        img {
+                            margin: 1rem 0;
+                        }
+                    }
+
+                    
+
+                    & div.time {
+                        @extend .font-strong;
+                        font-size: $smaller-font;
+                        width: 100%;
+                        color: $black;
                     }
                 }
             }

@@ -47,7 +47,6 @@
       return {
           find: function() {
               if ( tasks.length === 0 ) {
-              console.log('servicefind');
                   resource.query()
                     .$promise.then(function(resp) {
                         angular.forEach(resp, function(task) {

@@ -1,26 +1,12 @@
 @import "compass/css3";
 
-// doc
+@import "colors";
+
+// font
 $font-family: Tahoma, Geneva, sans-serif;
-
-// colors
-$white: #ffffff;
-$black: #000000;
-$gray: #c5c5c5;
-$yellow: #fed86e;
-
-$background-color: #feffff;
-
-// state colors
-$pending-color: #c4c4c4;
-$pending-background-color: #d8d8d8;
-$running-color: #5e9cd3;
-$running-font-color: #1f5086;
-$running-background-color: lighten($running-font-color, 60%);
-$rejected-color: #be0712;
-$rejected-background-color: lighten($rejected-color, 55%);
-$completed-color: #548039;
-$completed-background-color: lighten($completed-color, 55%);
+$alternative-font-family: sans-serif;
+$small-font: 0.88rem;
+$smaller-font: 0.8rem;
 
 //boxes
 $border-width: 2px;

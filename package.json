@@ -4,7 +4,9 @@
   "description": "Assignment to Crossover.com",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "gulp allTests",
+    "testClient": "gulp testClient",
+    "testServer": "gulp testServer",
     "start": "node server.js",
     "postinstall": "bower install && gulp build",
     "build": "gulp build",
@@ -21,12 +23,24 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.1",
     "gulp-dest-clean": "^0.5.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-jasmine": "^2.4.2",
+    "gulp-jasmine-browser": "^1.7.1",
+    "gulp-jasmine-node": "^1.0.7",
+    "gulp-jasmine-phantom": "^3.0.0",
     "gulp-jshint": "^2.0.4",
     "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
     "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "^2.0.0",
+    "gulp-usemin": "^0.3.26",
     "gulp-util": "^3.0.7",
-    "jshint": "^2.9.4"
+    "jasmine": "^2.5.2",
+    "jasmine-node": "^1.14.5",
+    "jshint": "^2.9.4",
+    "request": "^2.79.0"
   },
   "repository": {
     "type": "git",

@@ -2,7 +2,7 @@
 
 let taskStates = {
     pending : 'pending',
-    running : 'runing',
+    running : 'running',
     accepted : 'accepted',
     rejected : 'rejected',
     completed : 'completed'

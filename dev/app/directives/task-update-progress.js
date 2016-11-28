@@ -16,11 +16,10 @@
                 element.addClass('step-state');
                 element.addClass(state);
 
-                if ( state != 'running')
+                if (state != 'running')
                     scope.progress = 100;
 
                 scope.$watch('state', function(){
-                    console.log('meh');
                     element.removeClass('pending running completed rejected');
                     element.addClass(scope.state);
                 });

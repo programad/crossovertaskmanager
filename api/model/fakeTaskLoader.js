@@ -5,7 +5,7 @@ const
     enums = require('../../utils/enums');
 
     
-let fakeIncrement = 10;
+let fakeIncrement = 5;
 
 let running = false;
 
@@ -17,7 +17,7 @@ let taskLoader = function (task) {
     task.state = enums.taskStates.pending;
     task.running = true;
 
-    if ( task.metrics.state !== enums.taskStates.complete ) {
+    if ( task.metrics.state !== enums.taskStates.completed ) {
 
         task.metrics.state = enums.taskStates.running;
         task.metrics.progress += fakeIncrement;
@@ -30,14 +30,14 @@ let taskLoader = function (task) {
             maintainability: mathHelper.getRandomInt(50,95),
             security: mathHelper.getRandomInt(50,95),
             workmanship: mathHelper.getRandomInt(50,95),
-            state: enums.taskStates.complete,
+            state: enums.taskStates.completed,
             progress: 100
         };
 
         return;
     }
 
-     if ( task.build.state !== enums.taskStates.complete ) {
+     if ( task.build.state !== enums.taskStates.completed ) {
 
         task.build.state = enums.taskStates.running;
         task.build.progress += fakeIncrement;
@@ -50,14 +50,14 @@ let taskLoader = function (task) {
             debug: '',
             release: '',
             endedAt: new Date(),
-            state: enums.taskStates.complete,
+            state: enums.taskStates.completed,
             progress: 100
         };
 
         return;
     }
 
-    if ( task.unitTest.state !== enums.taskStates.complete ) {
+    if ( task.unitTest.state !== enums.taskStates.completed ) {
 
         task.unitTest.state = enums.taskStates.running;
         task.unitTest.progress += fakeIncrement;
@@ -69,14 +69,14 @@ let taskLoader = function (task) {
             passed: mathHelper.getRandomInt(90,190),
             skiped: mathHelper.getRandomInt(10,30),
             codeCovered: mathHelper.getRandomInt(0,100)/100,
-            state: enums.taskStates.complete,
+            state: enums.taskStates.completed,
             progress: 100
         };
 
         return;
     }
 
-    if ( task.functionalTest.state !== enums.taskStates.complete ) {
+    if ( task.functionalTest.state !== enums.taskStates.completed ) {
 
         task.functionalTest.state = enums.taskStates.running;
         task.functionalTest.progress += fakeIncrement;
@@ -88,7 +88,7 @@ let taskLoader = function (task) {
             passed: mathHelper.getRandomInt(4000,8000),
             skiped: mathHelper.getRandomInt(2000,3000),
             codeCovered: mathHelper.getRandomInt(0,100)/100,
-            state: enums.taskStates.complete,
+            state: enums.taskStates.completed,
             progress: 100
         };
 
@@ -97,8 +97,8 @@ let taskLoader = function (task) {
 
     task.state = task.type === enums.taskTypes.firewall ? enums.taskStates.accepted : enums.taskStates.completed;
     task.result = {
-        state: enums.taskStates.complete,
-        message: enums.taskStates.complete
+        state: enums.taskStates.completed,
+        message: enums.taskStates.completed
     };
 
     running = false;
