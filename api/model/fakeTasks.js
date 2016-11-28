@@ -115,7 +115,10 @@ let task432461 = {
             codeCovered: 0.23,
             state: enums.taskStates.completed
         },
-        'result': taskBase.resultBase
+        'result': {            
+            state: enums.taskStates.rejected,
+            message: enums.taskStates.rejected
+        }
     };
 
 let task432462 = {

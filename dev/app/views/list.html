@@ -49,6 +49,26 @@
                         <h5>Functional Tests</h5>
                         <div task-testresult results="task.functionalTest"></div>
                     </div>
+                    <div class="result" ng-class="task.result.state" ng-click="$event.stopPropagation();">
+                        <h5>Result:</h5>
+                        <div class="message">
+                            <span ng-if="task.result.state == 'accepted'">Change accepted</span>
+                            <span ng-if="task.result.state == 'rejected'">Change rejected</span>
+                            {{task.result.message}}
+                        </div>
+                        <div ng-if="task.result.state == 'accepted'" class="action search-icon">
+                            <button ng-click="showMergedBuild(task.changelist)">Merged Build</button>
+                        </div>
+                        <div ng-if="task.result.state == 'rejected'" class="action">
+                            <button ng-click="showIssue(task.changelist)">Find Issues</button>
+                        </div>
+                        <div ng-if="task.result.state == 'completed'" class="action">
+                            <button>Deploy</button> to:
+                            <div class="select">
+                                <select ng-model="deployTarget" ng-options="option as option for option in environments"></select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

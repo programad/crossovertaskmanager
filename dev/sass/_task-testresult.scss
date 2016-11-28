@@ -9,9 +9,7 @@
 
     & div.chart-container {
         $pie-diameter: 92px;
-        $rotation: 60deg;
         position: relative;
-        @include transform(rotate($rotation) translate3d( 0, 0, 0));
         width: $pie-diameter;
         height: $pie-diameter;
     }

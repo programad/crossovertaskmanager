@@ -16,6 +16,23 @@
 
                 element.addClass('task-testresult');
                 scope.chartOptions = {
+                    responsive: false,
+                    type: 'pie',
+                    rotation: -0.8,
+                    events: false,
+                    showAllTooltips: true,
+                    tooltips: {
+                        displayColors: false,
+                        backgroundColor: 'rgba(0,0,0,0)',
+                        bodyFontColor: '#000000',
+                        bodyFontSize: 11,
+                        callbacks: {
+                                label: function(tooltipItem, data) {
+                                    var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                                    return value;
+                                }
+                            },                            
+                    }
                 };
 
                 scope.codeCoveredPerc = 0;
@@ -40,8 +57,8 @@
                 });
 
             },
-            template: '<canvas id="pie" height="' + pieDiameter + '" width="' + pieDiameter + '" class="chart chart-pie" chart-data="data" \
-             chart-options="chartOptions" chart-labels="labels" chart-colors="colors"> </canvas> \
+            template: '<div class="chart-container"><canvas id="pie" height="' + pieDiameter + '" width="' + pieDiameter + '" class="chart chart-pie" chart-data="data" \
+             chart-options="chartOptions" chart-labels="labels" chart-colors="colors"> </canvas></div> \
             <div class="perc"> \
                 {{getPassedPercentage()}} \
                 <span>tests passed</span> \

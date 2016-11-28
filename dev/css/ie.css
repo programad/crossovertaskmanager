@@ -1,0 +1,179 @@
+.hidden-element {
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.visibile-element {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.main-container {
+  max-width: 1160px;
+  margin: auto;
+  position: relative;
+  background-color: red;
+}
+
+.main-content {
+  margin: auto;
+  max-width: 1160px;
+  height: 300px;
+  background-color: gray;
+}
+
+body {
+  min-width: 1050px;
+}
+
+div.header {
+  padding: 0;
+}
+div.header div {
+  display: inline-block;
+  width: 11.5%;
+  padding: 0;
+  margin: 0;
+}
+div.header div:first-child {
+  text-align: left;
+}
+
+div.items div {
+  margin-bottom: 5px;
+}
+div.items.basicinfo {
+  padding: 0px;
+}
+div.items.basicinfo > div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12%;
+}
+div.items.basicinfo > div:first-child, div.items.basicinfo > div.show-time {
+  font-size: 14px;
+}
+div.items.basicinfo > div:first-child {
+  width: 13%;
+}
+div.items.basicinfo > div.steps {
+  width: 45%;
+  line-height: 26px;
+}
+div.items.basicinfo > div.steps div.step-state {
+  display: inline-block;
+  vertical-align: middle;
+  height: 26px;
+  margin: 2px 7.2%;
+}
+div.items.basicinfo > div.steps div.step-state div {
+  height: 26px;
+}
+div.items div.details {
+  text-align: left;
+}
+div.items div.details > div {
+  vertical-align: top;
+  display: inline-block;
+  width: 16%;
+  height: 175px;
+}
+div.items div.details > div h5 {
+  padding: 2px;
+}
+div.items div.details > div div.computer {
+  display: inline-block;
+  width: 40% !important;
+  padding-top: 14px;
+  margin: 2%;
+  height: 105px;
+  text-align: center;
+}
+div.items div.details > div div.time {
+  display: inline-block;
+  width: 100% !important;
+  font-size: 12px;
+  text-align: center;
+}
+div.items div.details div.task-testresult {
+  text-align: right;
+}
+div.items div.details div.task-testresult > div {
+  display: inline-block;
+  vertical-align: bottom;
+}
+div.items div.details div.task-testresult .chart-container {
+  width: 50% !important;
+}
+div.items div.details div.task-testresult .perc {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  vertical-align: bottom;
+  width: 50% !important;
+  text-align: center;
+  font-size: 40px;
+}
+div.items div.details div.task-testresult .perc span {
+  font-size: 12px;
+}
+div.items div.details div.task-testresult .bar {
+  width: 90%;
+  margin: 0 5%;
+  position: relative;
+  height: 40px;
+}
+div.items div.details div.task-testresult .bar .progress {
+  height: 40px;
+}
+div.items div.details div.task-testresult .bar .content {
+  position: relative;
+  top: -36px;
+  width: 100%;
+  text-align: center;
+}
+div.items div.details div.metric-box {
+  display: inline-block;
+  width: 40% !important;
+  text-align: center;
+}
+div.items div.details div.metric-box .number {
+  font-size: 16px;
+}
+div.items div.details div.metric-box .description {
+  font-size: 11px;
+}
+div.items div.details div.metric-box.up .number:after, div.items div.details div.metric-box.down .number:after {
+  top: -20px;
+}
+div.items div.details div.metric-box.up .description, div.items div.details div.metric-box.down .description {
+  top: -15px;
+  position: relative;
+}
+div.items div.details div.metric-box.right .number:before {
+  top: 20px;
+}
+div.items div.details div.metric-box.right .number:after {
+  top: -33px;
+}
+div.items div.details div.metric-box.right .description {
+  top: -30px;
+  position: relative;
+}
+div.items div.details div.result {
+  text-align: center;
+}
+div.items div.details div.result div.message {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+div.items div.details div.result div.message span {
+  font-size: 18px;
+}
+div.items div.details div.result button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}

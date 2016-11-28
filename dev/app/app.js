@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    var app =  angular.module('taskmanager', ['ngRoute', 'ngResource', 'chart.js']);
+    var app =  angular.module('taskmanager', ['ngRoute', 'ngResource', 'ngAnimate', 'chart.js']);
 
     var appConfig = function ($routeProvider, $locationProvider) {
 

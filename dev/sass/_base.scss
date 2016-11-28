@@ -37,3 +37,17 @@ $transition-time: 1.5s;
     @extend .visibile-element;
     @include transition(visibility $transition-timing-function $transition-time, opacity $transition-timing-function $transition-time);
 }
+
+.main-container {
+    //max-width: 800px;
+    max-width: 1160px;
+    margin: auto;
+    position: relative;
+    background-color: red;
+}
+.main-content {
+    margin: auto;
+    max-width: 1160px;
+    height: 300px;
+    background-color: gray;
+}

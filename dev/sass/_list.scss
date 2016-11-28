@@ -24,6 +24,20 @@ div.tasklist {
         cursor: pointer;
     }
 
+    // angular animations
+    
+    & li.ng-move, & li.ng-enter, & li.ng-leave {
+        @include transition(all linear $transition-time * 0.2);
+    }
+
+    & li.ng-leave.ng-leave-active, & li.ng-move, & li.ng-enter {
+        @include opacity(0);
+    }
+
+    & li.ng-leave, & li.ng-move.ng-move-active, & li.ng-enter.ng-enter-active {
+        @include opacity(1);
+    }
+
     & .details div.step-info {
         @extend .base-state;
         border-color: $gray;
@@ -176,11 +190,26 @@ div.tasklist {
                 @include flex-wrap(wrap);
                 overflow: hidden;
 
+                &.ng-enter, &.ng-leave {
+                  @include transition(all linear $transition-time * 0.2);
+                }
+
+                &.ng-enter, &.ng-leave.ng-leave-active {
+                    height: 0;
+                    @include opacity(0);
+                }
+
+                &.ng-leave, &.ng-enter.ng-enter-active {
+                    height: 220px;
+                    @include opacity(1);
+                }
+
+
                 & > div {
 
                     margin: 1%;
                     min-height: 11rem;
-                    width: 15rem;
+                    width: 11.5rem;
                     border-width: $border-width + 1;
                     @include display-flex;
                     @include flex-wrap(wrap);
@@ -233,6 +262,92 @@ div.tasklist {
                         font-size: $smaller-font;
                         width: 100%;
                         color: $black;
+                    }
+
+                    &.result {
+                        width: 12.5rem;
+                        font-weight: 100;
+                        border: 0;
+                        background: transparent;
+
+                        h5 {
+                            color: $black;
+                        }
+
+                        &.accepted .message {
+                            color: $accepted-color;
+                        }
+
+                        .message {
+                            font-size: 2rem;
+                            margin: auto;
+                            text-align: center;
+
+                            span {
+                                display: block;
+                                width: 100%;
+                                font-size: $small-font;
+                            }
+                        }
+
+                        .action {
+                            margin: auto;
+
+                            button {
+                                color: $white;
+                                padding: 0.5rem 0.8rem;
+                                width: 140px;
+                                font-size: 0.8rem;
+                                font-weight: 100;
+                                letter-spacing: 1px;
+                                background-color: $running-color;
+                                border:2px solid $gray;
+                                @include border-radius(1px);
+                            }
+
+                            &.search-icon button {
+                                text-align: right;
+                                background-image: url('/images/search.png');
+                                background-repeat: no-repeat;
+                                background-position: 12px center;
+                            }
+
+                            div.select {
+
+                                select {
+                                    color: $running-color;
+                                    background: transparent;
+                                    width: 100%;
+                                    line-height: 1;
+                                    border: 0;
+                                    font-size: 0.9rem;
+                                    @include border-radius(0);
+                                    @include appearance(none);
+                                }
+
+                                width: 90px;
+                                height: 1rem;
+                                padding: 0.3rem 0.5rem;
+                                margin-top: 0.5rem;
+                                overflow: hidden;
+                                background-color: transparent;
+                                background-image: url('/images/arrow.png');
+                                background-repeat: no-repeat;
+                                background-position: 85px center;
+                                border: 2px solid $running-color;
+                                display: inline-block;
+                            }
+                        }
+
+                        &.completed {
+                            .action {
+                                text-align: right;
+
+                                button {
+                                    width: 100px;
+                                }
+                            }
+                        }
                     }
                 }
             }
