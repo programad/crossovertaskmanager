@@ -6,7 +6,7 @@
 
   var TaskService = function ($resource, $timeout) {
 
-      var resource = $resource('/api/tasks/:taskId', {buildId:'@id'});
+      var resource = $resource('/api/tasks/:taskId', {taskId:'@id'});
 
       var tasks = [];
 
@@ -29,7 +29,7 @@
                     angular.forEach(tasks, function(task) {
                         if ( task.id == res.id ) {
                             map(res, task);
-                            if ( task.state === 'pending' || task.state === 'running') {
+                            if (canBeUpdated(task.state)) {
                                 self.wait();
                             }
                         }
@@ -38,11 +38,15 @@
           };
 
           this.wait = function() {
-              $timeout(self.verify, 500);
+              $timeout(self.verify, APPCONFIG.ServiceInterval);
           };
 
           this.wait();
       };
+
+      function canBeUpdated(state) {
+          return  state === APPCONFIG.TaskStates.pending || state === APPCONFIG.TaskStates.running;
+      }
 
       return {
           find: function() {
@@ -50,7 +54,7 @@
                   resource.query()
                     .$promise.then(function(resp) {
                         angular.forEach(resp, function(task) {
-                            if ( task.state === 'pending' || task.state === 'running' ) {
+                            if (canBeUpdated(task.state)) {
                                 new TaskMonitor(task);
                             }
                             tasks.push(task);
@@ -61,7 +65,7 @@
               return tasks;
           },
           get: function(id) {
-              return resource.get({id:id});
+              return resource.get({taskId:id});
           }
       };
   };

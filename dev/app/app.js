@@ -10,6 +10,14 @@
                 templateUrl: 'app/views/list.html',
                 controller: 'ListController'
             })
+            .when('/issues/:id', {
+                templateUrl: 'app/views/issues.html',
+                controller: 'IssueController'
+            })
+            .when('/task/:id', {
+                templateUrl: 'app/views/task.html',
+                controller: 'TaskController'
+            })
             .otherwise({
                 redirectTo: '/'
             }); 

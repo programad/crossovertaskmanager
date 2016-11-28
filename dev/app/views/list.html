@@ -60,7 +60,7 @@
                             <button ng-click="showMergedBuild(task.changelist)">Merged Build</button>
                         </div>
                         <div ng-if="task.result.state == 'rejected'" class="action">
-                            <button ng-click="showIssue(task.changelist)">Find Issues</button>
+                            <button task-issue-list id="task.id">Find Issues</button>
                         </div>
                         <div ng-if="task.result.state == 'completed'" class="action">
                             <button>Deploy</button> to:

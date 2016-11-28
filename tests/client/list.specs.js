@@ -94,7 +94,7 @@ describe('Listing tests', function () {
             
             it('The first selected deployTarget should be selected from the environment options', inject(function ($controller) {
                   $controller(ListController, {
-                        $scope: scope;
+                        $scope: scope
                   });
 
                   expect(scope.deployTarget).toBe(scope.environments[0]);

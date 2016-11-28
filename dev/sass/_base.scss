@@ -43,11 +43,74 @@ $transition-time: 1.5s;
     max-width: 1160px;
     margin: auto;
     position: relative;
-    background-color: red;
 }
 .main-content {
     margin: auto;
     max-width: 1160px;
     height: 300px;
-    background-color: gray;
 }
+
+
+.base-state {
+    background-repeat: no-repeat;
+    border-width: $border-width;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+    div.rejected {
+        @extend .base-state;
+    }
+
+    div.completed {
+        @extend .base-state;
+    }
+
+    div.accepted {
+        @extend .base-state;
+    }
+
+    div.pending {
+        @extend .base-state;
+    }
+
+    div.running {
+        @extend .base-state;
+    }
+
+    .rejected-state {
+        color: $rejected-color;
+        border-color: $rejected-color  !important;
+        @include background-gradient($rejected-background-color);
+    }
+    div.rejected {
+        @extend .rejected-state;
+    }
+
+    
+    div.pending {
+        cursor: not-allowed;
+        border-color: $pending-color;
+        color: $pending-color;
+        @include background-gradient($running-background-color);
+    }
+
+    div.running {
+        cursor: not-allowed;
+        border-color: $running-font-color;
+        color: $running-font-color;
+        @include background-gradient($running-background-color);
+    }
+
+    .completed-state{
+        border-color: $completed-color !important;
+        color: $completed-color;
+        @include background-gradient($completed-background-color);
+    }
+    div.completed {
+        @extend .completed-state;
+    }
+    div.accepted {
+        @extend .completed-state;
+    }  

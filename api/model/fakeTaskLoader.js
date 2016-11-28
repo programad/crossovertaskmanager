@@ -4,8 +4,9 @@ const
     mathHelper = require('../lib/mathHelper'),
     enums = require('../../utils/enums');
 
-    
-let fakeIncrement = 5;
+
+
+let fakeIncrement = mathHelper.getRandomInt(5, 10);
 
 let running = false;
 
@@ -14,8 +15,8 @@ let taskLoader = function (task) {
     if (task.state === enums.taskStates.pending && running)
         return;
 
-    task.state = enums.taskStates.pending;
-    task.running = true;
+    task.state = enums.taskStates.running;
+    running = true;
 
     if ( task.metrics.state !== enums.taskStates.completed ) {
 

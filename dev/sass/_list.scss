@@ -8,96 +8,27 @@ div.tasklist {
     background-color: $background-color;
     text-align: center;
 
-    .time {
-        text-transform: lowercase;
-    }
-
     .state {
         text-transform: capitalize;
     }
-
-    .base-state {
-        background-repeat: no-repeat;
-        border-width: $border-width;
-        border-style: solid;
-        border-color: transparent;
-        cursor: pointer;
-    }
-
     // angular animations
     
-    & li.ng-move, & li.ng-enter, & li.ng-leave {
+    & div.ng-move, & div.ng-enter, & div.ng-leave {
         @include transition(all linear $transition-time * 0.2);
     }
 
-    & li.ng-leave.ng-leave-active, & li.ng-move, & li.ng-enter {
+    & div.ng-leave.ng-leave-active, & div.ng-move, & div.ng-enter {
         @include opacity(0);
     }
 
-    & li.ng-leave, & li.ng-move.ng-move-active, & li.ng-enter.ng-enter-active {
+    & div.ng-leave, & div.ng-move.ng-move-active, & div.ng-enter.ng-enter-active {
         @include opacity(1);
     }
 
     & .details div.step-info {
         @extend .base-state;
         border-color: $gray;
-    }
-
-    & div.rejected {
-        @extend .base-state;
-    }
-
-    & div.completed {
-        @extend .base-state;
-    }
-
-    & div.accepted {
-        @extend .base-state;
-    }
-
-    & div.pending {
-        @extend .base-state;
-    }
-
-    & div.running {
-        @extend .base-state;
-    }
-
-    .rejected-state {
-        color: $rejected-color;
-        border-color: $rejected-color  !important;
-        @include background-gradient($rejected-background-color);
-    }
-    & div.rejected {
-        @extend .rejected-state;
-    }
-
-    
-    & div.pending {
-        cursor: not-allowed;
-        border-color: $pending-color;
-        color: $pending-color;
-        @include background-gradient($running-background-color);
-    }
-
-    & div.running {
-        cursor: not-allowed;
-        border-color: $running-font-color;
-        color: $running-font-color;
-        @include background-gradient($running-background-color);
-    }
-
-    .completed-state{
-        border-color: $completed-color !important;
-        color: $completed-color;
-        @include background-gradient($completed-background-color);
-    }
-    & div.completed {
-        @extend .completed-state;
-    }
-    & div.accepted {
-        @extend .completed-state;
-    }    
+    }  
 
     .steps {
         text-align: left;
@@ -142,6 +73,13 @@ div.tasklist {
                 padding: 0px;
             }
 
+            div.item, div.details {
+                & div.time {
+                    text-transform: lowercase;
+                }
+            };
+
+
             &.basicinfo {
                 @include display-flex;
                 @include flex-wrap(wrap);
@@ -161,9 +99,9 @@ div.tasklist {
 
                 & > div {
                     display: inline-block; /* css-hack for non-flexbox browsers */
-                    @include flex(1 0);
+                    @include flex(1 0)
                 }
-                
+                    
 
                 & div.time {
                     @include flex(1.3 0);

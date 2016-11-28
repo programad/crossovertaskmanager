@@ -1,14 +1,15 @@
-// Import Base
+
 @import "base";
 
 .task-popover {
-    z-index: 1;
+    z-index: 99999;
     visibility: visible;
     opacity: 1;
     position: absolute;
-    top: -10px;
-    min-width: 210px;
-    min-height: 100px;
+    top: -5px;
+    left: -5px;
+    min-width: 440px;
+    min-height: 200px;
     border: 1px solid;
     border-radius: 5px;
     background-color: $white;
@@ -22,26 +23,6 @@
     &.ng-hide {
       opacity: 0;
       visibility: hidden;
-    }
-
-    &:before, &:after {
-        display: block;
-        content: '';
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 8px;
-        border: 7px outset transparent;
-    }
-
-    &:before {
-        border-right: 7px solid #555;
-        left: -15px;
-    }
-
-    &:after {
-        border-right: 7px solid $white;
-        left: -14px;
     }
 
     h6 {
