@@ -10,7 +10,7 @@
         <div>Functional Test</div>
     </div>
     <div class="items">
-        <div data-ng-repeat="task in tasks | orderBy: '-startedAt'" ng-click="toggleSelection(task)">
+        <div data-ng-repeat="task in tasks | orderBy: ['-id', 'startedAt']" ng-click="toggleSelection(task)">
             <div data-ng-class="task.state" class="item">
                 <div class="basicinfo">
                     <div>

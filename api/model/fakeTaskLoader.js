@@ -6,7 +6,7 @@ const
 
 
 
-let fakeIncrement = mathHelper.getRandomInt(5, 10);
+let fakeIncrement = mathHelper.getRandomInt(10, 200);
 
 let running = false;
 
@@ -16,6 +16,7 @@ let taskLoader = function (task) {
         return;
 
     task.state = enums.taskStates.running;
+    task.startedAt = new Date();
     running = true;
 
     if ( task.metrics.state !== enums.taskStates.completed ) {
