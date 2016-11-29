@@ -11,7 +11,7 @@ function metricsBase() {
         maintainability: 0,
         security: 0,
         workmanship: 0
-    }
+    };
 }
 
 function buildBase() {
@@ -22,7 +22,7 @@ function buildBase() {
         release: '',
         startedAt: '',
         endedAt: ''
-    }
+    };
 }
 
 function testBase() {
@@ -32,14 +32,14 @@ function testBase() {
         passed: 0,
         skiped: 0,
         codeCovered: 0
-    }
+    };
 }
 
 function resultBase(taskstate, message) {
     return {
         state: taskstate,
         message: message
-    }
+    };
 }
 
 exports.metricsBase = metricsBase;
