@@ -42,3 +42,10 @@ When an element is in the expanded state (expanded by angular condition)
 	each of the 4 content boxes should act as a button (directives take control here. The click directive  adds this behaviour to the boxes)
 	allowing the user to get more information about that item (When clicked, the directive shows the extra information, here I would make another api call to get the details of the box clicked)
 		These details will be shown in a pop-over content view on the page (directive, simple div)
+
+I have created the file app.config.js so the client application can be configured and on top of that, a angular controller could be written to perform real time configurations.
+
+I have included the video on the package and uploaded to Youtube (non listed): https://www.youtube.com/watch?v=LDdta70sRss
+
+My main expertise is ASP.NET MVC, but I just love javascript and I am one of the best javascript programmers at my current job.
+I could improve the backend a lot with more time with a queue system to process the tasks.
