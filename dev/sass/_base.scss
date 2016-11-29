@@ -1,21 +1,22 @@
 @import "compass/css3";
-
 @import "colors";
-
 // font
-$font-family: Tahoma, Geneva, sans-serif;
+$font-family: Tahoma,
+Geneva,
+sans-serif;
 $alternative-font-family: sans-serif;
 $small-font: 0.88rem;
 $smaller-font: 0.8rem;
-
 //boxes
 $border-width: 2px;
-
 // fx
 $transition-time: 1.5s;
-
 @mixin background-gradient($color) {
-    @include background-image(linear-gradient(140deg, $color, rgb(255,255,255), rgb(255,255,255), rgb(255,255,255)));
+    @include background-image(linear-gradient(140deg, $color, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)));
+}
+
+.fullwidth {
+    width: 100%;
 }
 
 .hidden-element {
@@ -44,12 +45,12 @@ $transition-time: 1.5s;
     margin: auto;
     position: relative;
 }
+
 .main-content {
     margin: auto;
     max-width: 1160px;
     height: 300px;
 }
-
 
 .base-state {
     background-repeat: no-repeat;
@@ -59,58 +60,60 @@ $transition-time: 1.5s;
     cursor: pointer;
 }
 
-    div.rejected {
-        @extend .base-state;
-    }
+div.rejected {
+    @extend .base-state;
+}
 
-    div.completed {
-        @extend .base-state;
-    }
+div.completed {
+    @extend .base-state;
+}
 
-    div.accepted {
-        @extend .base-state;
-    }
+div.accepted {
+    @extend .base-state;
+}
 
-    div.pending {
-        @extend .base-state;
-    }
+div.pending {
+    @extend .base-state;
+}
 
-    div.running {
-        @extend .base-state;
-    }
+div.running {
+    @extend .base-state;
+}
 
-    .rejected-state {
-        color: $rejected-color;
-        border-color: $rejected-color  !important;
-        @include background-gradient($rejected-background-color);
-    }
-    div.rejected {
-        @extend .rejected-state;
-    }
+.rejected-state {
+    color: $rejected-color;
+    border-color: $rejected-color !important;
+    @include background-gradient($rejected-background-color);
+}
 
-    
-    div.pending {
-        cursor: not-allowed;
-        border-color: $pending-color;
-        color: $pending-color;
-        @include background-gradient($running-background-color);
-    }
+div.rejected {
+    @extend .rejected-state;
+}
 
-    div.running {
-        cursor: not-allowed;
-        border-color: $running-font-color;
-        color: $running-font-color;
-        @include background-gradient($running-background-color);
-    }
+div.pending {
+    cursor: not-allowed;
+    border-color: $pending-color;
+    color: $pending-color;
+    @include background-gradient($running-background-color);
+}
 
-    .completed-state{
-        border-color: $completed-color !important;
-        color: $completed-color;
-        @include background-gradient($completed-background-color);
-    }
-    div.completed {
-        @extend .completed-state;
-    }
-    div.accepted {
-        @extend .completed-state;
-    }  
+div.running {
+    cursor: not-allowed;
+    border-color: $running-font-color;
+    color: $running-font-color;
+    @include background-gradient($running-background-color);
+}
+
+.completed-state {
+    border-color: $completed-color !important;
+    color: $completed-color;
+    @include background-gradient($completed-background-color);
+}
+
+div.completed {
+    @extend .completed-state;
+}
+
+div.accepted {
+    @extend .completed-state;
+}

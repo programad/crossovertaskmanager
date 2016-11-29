@@ -39,8 +39,6 @@
 
                 element.css('position', 'relative');
 
-                //el.css({'left': (10 + element[0].offsetWidth) + 'px'});
-
                 element.on('click', function(e) {
 
                     if ( e.stopPropagation ) e.stopPropagation();

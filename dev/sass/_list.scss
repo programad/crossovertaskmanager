@@ -43,6 +43,7 @@ div.tasklist {
         @include flex-wrap(nowrap);
         vertical-align: middle;
         padding: 0.1rem 0.3rem;
+        margin: 0.5em auto;
 
         div {
             display: inline-block; /* css-hack for non-flexbox browsers */
@@ -127,6 +128,7 @@ div.tasklist {
                 @include display-flex;
                 @include flex-wrap(wrap);
                 overflow: hidden;
+                padding-bottom: 20px;
 
                 &.ng-enter, &.ng-leave {
                   @include transition(all linear $transition-time * 0.2);
@@ -231,18 +233,6 @@ div.tasklist {
                         .action {
                             margin: auto;
 
-                            button {
-                                color: $white;
-                                padding: 0.5rem 0.8rem;
-                                width: 140px;
-                                font-size: 0.8rem;
-                                font-weight: 100;
-                                letter-spacing: 1px;
-                                background-color: $running-color;
-                                border:2px solid $gray;
-                                @include border-radius(1px);
-                            }
-
                             &.search-icon button {
                                 text-align: right;
                                 background-image: url('/images/search.png');
@@ -251,17 +241,6 @@ div.tasklist {
                             }
 
                             div.select {
-
-                                select {
-                                    color: $running-color;
-                                    background: transparent;
-                                    width: 100%;
-                                    line-height: 1;
-                                    border: 0;
-                                    font-size: 0.9rem;
-                                    @include border-radius(0);
-                                    @include appearance(none);
-                                }
 
                                 width: 90px;
                                 height: 1rem;
@@ -273,7 +252,19 @@ div.tasklist {
                                 background-repeat: no-repeat;
                                 background-position: 85px center;
                                 border: 2px solid $running-color;
-                                display: inline-block;
+                                margin-left: auto;
+                                
+
+                                select {
+                                    color: $running-color;
+                                    background: transparent;
+                                    width: 100%;
+                                    line-height: 1;
+                                    border: 0;
+                                    font-size: 0.9rem;
+                                    @include border-radius(0);
+                                    @include appearance(none);
+                                }
                             }
                         }
 

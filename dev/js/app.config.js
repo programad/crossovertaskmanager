@@ -1,17 +1,17 @@
 var APPCONFIG = (function () {
 
-    let taskStates = {
+    var taskStates = {
         pending: 'pending',
         running: 'running',
         accepted: 'accepted',
         rejected: 'rejected',
         completed: 'completed'
-    }
+    };
 
-    let taskTypes = {
+    var taskTypes = {
         build: 'build',
         firewall: 'firewall'
-    }
+    };
 
     return {
         ServiceInterval: 500,

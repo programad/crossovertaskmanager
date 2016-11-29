@@ -1,3 +1,7 @@
+.fullwidth {
+  width: 100%;
+}
+
 .hidden-element {
   visibility: hidden;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);

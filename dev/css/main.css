@@ -1,3 +1,7 @@
+.fullwidth {
+  width: 100%;
+}
+
 .hidden-element, div.tasklist .items div.basicinfo div.steps.expanded, div.tasklist .items div.basicinfo > div.expanded:last-child, .task-testresult div.perc, .task-testresult div.bar div.content {
   visibility: hidden;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -202,6 +206,7 @@ div.tasklist .header {
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 0.1rem 0.3rem;
+  margin: 0.5em auto;
 }
 div.tasklist .header div {
   display: inline-block;
@@ -272,6 +277,7 @@ div.tasklist .items div.details {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 div.tasklist .items div.details.ng-enter, div.tasklist .items div.details.ng-leave {
   -moz-transition: all 0.3s linear;
@@ -363,19 +369,6 @@ div.tasklist .items div.details > div.result .message span {
 div.tasklist .items div.details > div.result .action {
   margin: auto;
 }
-div.tasklist .items div.details > div.result .action button {
-  color: #ffffff;
-  padding: 0.5rem 0.8rem;
-  width: 140px;
-  font-size: 0.8rem;
-  font-weight: 100;
-  letter-spacing: 1px;
-  background-color: #5e9cd3;
-  border: 2px solid #c5c5c5;
-  -moz-border-radius: 1px;
-  -webkit-border-radius: 1px;
-  border-radius: 1px;
-}
 div.tasklist .items div.details > div.result .action.search-icon button {
   text-align: right;
   background-image: url("/images/search.png");
@@ -393,7 +386,7 @@ div.tasklist .items div.details > div.result .action div.select {
   background-repeat: no-repeat;
   background-position: 85px center;
   border: 2px solid #5e9cd3;
-  display: inline-block;
+  margin-left: auto;
 }
 div.tasklist .items div.details > div.result .action div.select select {
   color: #5e9cd3;
