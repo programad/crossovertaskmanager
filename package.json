@@ -43,6 +43,9 @@
     "jshint": "^2.9.4",
     "request": "^2.79.0"
   },
+  "env": {
+    "jasmine": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/programad/crossovertaskmanager.git"
